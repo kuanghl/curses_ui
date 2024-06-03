@@ -45,3 +45,6 @@ wincon/*.def
 m
 .vscode
 build
+
+out
+.vs

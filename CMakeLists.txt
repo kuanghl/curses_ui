@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 2.8...3.5)
 
 project(curses_ui)
 
-set(BUILD_SUBTARGET_NAME "ncurses")
+# set(BUILD_SUBTARGET_NAME "vt")
+option(BUILD_SUBTARGET_NAME "Build the SUBDIRECTORIES: vt/x11/fb/ncurses/wincon/wingui" vt)
 
 # demo
 message(STATUS "build name: ${BUILD_SUBTARGET_NAME}")
@@ -16,6 +17,8 @@ elseif(BUILD_SUBTARGET_NAME STREQUAL "ncurses")
     add_subdirectory(ncurses)
 elseif(BUILD_SUBTARGET_NAME STREQUAL "wincon")
     add_subdirectory(wincon)
+elseif(BUILD_SUBTARGET_NAME STREQUAL "wingui")
+    add_subdirectory(wingui)
 else()
     message(STATUS "Not Support ${BUILD_SUBTARGET_NAME}")
 endif()

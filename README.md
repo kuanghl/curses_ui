@@ -1,4 +1,5 @@
 #### 1. Introduce.
+
 - 源文件宏依赖
   - XCURSES -- x11
   - PDC_RGB -- RGB
@@ -35,3 +36,37 @@
   - openGL
 
 #### 2. Build and tests.
+
+Windows:
+
+```sh
+# Makefile:
+cd vt
+nmake -f Makefile.vc WIDE=Y UTF8=Y DEBUG=Y demos 
+cd wincon
+nmake -f Makefile.vc WIDE=Y UTF8=Y DEBUG=Y demos 
+cd wingui
+nmake -f Makefile.vc WIDE=Y UTF8=Y DEBUG=Y demos 
+
+# CMakeLists.txt
+mkdir build
+cmake -G "NMake Makefiles" -DCMAKE_BUILD_TYPE=RELEASE -DBUILD_SUBTARGET_NAME=vt ..
+nmake 
+```
+
+Linux/macOS:
+
+```sh
+# Makefile:
+cd vt
+make -f Makefile WIDE=Y UTF8=Y DEBUG=Y demos 
+cd ncurses
+make -f Makefile WIDE=Y UTF8=Y DEBUG=Y demos 
+cd fb
+make -f Makefile WIDE=Y UTF8=Y DEBUG=Y demos 
+
+# CMakeLists.txt
+mkdir build
+cmake -DBUILD_SUBTARGET_NAME=vt ..
+make 
+```

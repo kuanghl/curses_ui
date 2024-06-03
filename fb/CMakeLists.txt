@@ -67,3 +67,6 @@ target_link_libraries(fb_worm pdcfb)
 
 add_executable(fb_xmas ${PROJECT_SOURCE_DIR}/demos/xmas.c)
 target_link_libraries(fb_xmas pdcfb)
+
+add_executable(fb_version ${PROJECT_SOURCE_DIR}/demos/version.c)
+target_link_libraries(fb_version pdcfb)

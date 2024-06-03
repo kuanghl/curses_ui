@@ -76,3 +76,6 @@ target_link_libraries(x11_worm pdcx11)
 
 add_executable(x11_xmas ${PROJECT_SOURCE_DIR}/demos/xmas.c)
 target_link_libraries(x11_xmas pdcx11)
+
+add_executable(x11_version ${PROJECT_SOURCE_DIR}/demos/version.c)
+target_link_libraries(x11_version pdcx11)
